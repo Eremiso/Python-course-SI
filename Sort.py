@@ -8,7 +8,7 @@ def tab_liczb():
         tab.append(liczba)
     return tab
 
-def sort_bobmelkowe(tab):
+def sort_bombelkowe(tab):
     for i in range(len(tab)):
         x = len(tab) - 1
         while x > i:
@@ -30,5 +30,5 @@ def sort_wstawianie(tab):
     return tab
 
 tab=tab_liczb()
-print("sortowanie bombelkowe",sort_wstawianie(tab))
-print("sortowanie przez wstawianie",sort_bobmelkowe(tab))
+print("sortowanie przez wstawianie",sort_wstawianie(tab))
+print("sortowanie bombelkowe",sort_bombelkowe(tab))
