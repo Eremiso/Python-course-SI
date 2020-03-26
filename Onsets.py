@@ -71,8 +71,10 @@ def czas(tab,fun):
 
 lista_1 = ([11,2,6,1,1,1,12,0,2,3,4,10,11],3)
 
-
+print("BOMBELKOWE")
 print(wyciaganie_indeks_bombelkowo(lista_1))
 czas(lista_1,wyciaganie_indeks_bombelkowo)
+print("----------------------")
+print("WSTAWIANIE")
 print(wyciaganie_indeks_wstawianie(lista_1))
 czas(lista_1,wyciaganie_indeks_wstawianie)
