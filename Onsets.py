@@ -21,3 +21,16 @@ def sort_wstawianie(tab):
         tab[j + 1] = x
     return tab
 
+def wyciaganie_danych(tab):
+    granica=tab[1]
+    strumien_danych=tab[0]
+    count=0
+    tab1=([],[])
+    for i in range(len(strumien_danych)):
+        if count <3:
+            if strumien_danych[i] > granica:
+                tab1[0].append(i)
+                tab1[1].append(strumien_danych[i])
+                count=count+1
+
+    return tab1
