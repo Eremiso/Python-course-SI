@@ -21,16 +21,26 @@ def sort_wstawianie(tab):
         tab[j + 1] = x
     return tab
 
-def wyciaganie_danych(tab):
+def wyciaganie_indeks(tab):
     granica=tab[1]
     strumien_danych=tab[0]
     count=0
-    tab1=([],[])
+    dane=[]
     for i in range(len(strumien_danych)):
         if count <3:
             if strumien_danych[i] > granica:
-                tab1[0].append(i)
-                tab1[1].append(strumien_danych[i])
+                z=[]
+                z.append(strumien_danych[i])
+                z.append(i)
+                dane.append(z)
                 count=count+1
+    zz=sort_bombelkowe(dane)
+    zz.reverse()
+    wynik=[]
+    for i in range(3):
+        wynik.append(zz[i][1])
+    return wynik
 
-    return tab1
+
+lista_1 = ([1,2,6,1,1,1,1,0,2,3,4,10,11],3)
+print(wyciaganie_indeks(lista_1))
