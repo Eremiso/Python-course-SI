@@ -1,4 +1,6 @@
 from numpy import *
+import datetime
+
 
 def sort_bombelkowe(tab):
     for i in range(len(tab)):
@@ -61,8 +63,16 @@ def wyciaganie_indeks_wstawianie(tab):
         wynik.append(zz[i][1])
     return wynik
 
+def czas(tab,fun):
+    start = datetime.datetime.now()
+    fun(tab)
+    duration = datetime.datetime.now() - start
+    return print(duration)
+
+lista_1 = ([11,2,6,1,1,1,12,0,2,3,4,10,11],3)
 
 
-lista_1 = ([11,2,6,1,1,1,1,0,2,3,4,10,11],3)
 print(wyciaganie_indeks_bombelkowo(lista_1))
+czas(lista_1,wyciaganie_indeks_bombelkowo)
 print(wyciaganie_indeks_wstawianie(lista_1))
+czas(lista_1,wyciaganie_indeks_wstawianie)
