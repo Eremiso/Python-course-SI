@@ -1,7 +1,6 @@
 from numpy import *
 import datetime
 
-
 def sort_bombelkowe(tab):
     for i in range(len(tab)):
         x = len(tab) - 1
@@ -78,3 +77,4 @@ print("----------------------")
 print("WSTAWIANIE")
 print(wyciaganie_indeks_wstawianie(lista_1))
 czas(lista_1,wyciaganie_indeks_wstawianie)
+
