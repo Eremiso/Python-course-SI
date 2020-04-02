@@ -25,6 +25,17 @@ def pierwsze_oferty(asks_bbay,bids_bbay):
     for i in range(ilosc):
         print(bids_bbay[i:i+1])
 
+def gdzie_kupic(buy_trade,buy_ticker_bbay,sell_trade,sell_ticker_bbay):
+    if  buy_trade < buy_ticker_bbay:
+        print("Lepiej kupić Bitcoin z Blokchain za", buy_trade,"zł")
+    else:
+        print("Lepiej kupić Bitcoin z Bitbay za", buy_ticker_bbay, "zł")
+
+    if sell_trade > sell_ticker_bbay:
+        print("Lepiej sprzedać Bitcoin z Blokchain za", sell_trade, "zł")
+    else:
+        print("Lepiej sprzedać Bitcoin z Bitbat za", sell_ticker_bbay, "zł")
+
 data = data_bbay()
 data_ticker = data_ticker_bbay()
 data_trade =data_trade_bchain()
@@ -37,3 +48,5 @@ asks_bbay = data['asks']
 bids_bbay = data['bids']
 
 pierwsze_oferty(asks_bbay,bids_bbay)
+print("-"*30)
+gdzie_kupic(buy_trade,buy_ticker_bbay,sell_trade,sell_ticker_bbay)
