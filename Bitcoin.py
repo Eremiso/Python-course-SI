@@ -19,11 +19,11 @@ def pierwsze_oferty(asks_bbay,bids_bbay):
     print("CENA SPRZEDAŻY:")
 
     for i in range(ilosc):
-        print(asks_bbay[i:i+1])
+        print(i+1,".",asks_bbay[i:i+1])
 
     print("CENA KUPNA:")
     for i in range(ilosc):
-        print(bids_bbay[i:i+1])
+        print(i+1,".",bids_bbay[i:i+1])
 
 def gdzie_kupic(buy_trade,buy_ticker_bbay,sell_trade,sell_ticker_bbay):
     if  buy_trade < buy_ticker_bbay:
