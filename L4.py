@@ -4,7 +4,6 @@ def data():
     data=[]
     buy=[]
     sell=[]
-    name=[]
 
     data.append(requests.get('https://bitbay.net/API/Public/BTC/USD/ticker.json').json())
     data.append(requests.get("https://blockchain.info/ticker").json())
@@ -32,11 +31,35 @@ def data():
     return  buy,sell,name
 
 
-def buy_and_sell(data):
+def arbitration(data,amount):
 
     buy_best=min(zip(data[0],data[2]))
     sell_best=max(zip(data[1],data[2]))
+    index_buy=data[2].index(buy_best[1])+1
+    index_sell=data[2].index(sell_best[1])+1
 
-    return buy_best,sell_best
+    if buy_best<sell_best:
+        resources_file = open('C:/Users/Legion/Desktop/Python-course-SI/resources.txt', 'r+')
+        resources = resources_file.readlines()
+        if float(resources[(index_sell * 5) + 1]) > amount and float(resources[(index_buy * 5) - 1]) > sell_best[
+            0] * amount:
+            income = (sell_best[0] - buy_best[0]) * amount
+            resources[1] = str(float(resources[1]) + income) + "\n"
+            resources[(index_sell * 5) + 1] = str(float(resources[(index_buy * 5) + 1]) - amount) + "\n"
+            resources[(index_buy * 5) + 1] = str(float(resources[(index_buy * 5) + 1]) + amount) + "\n"
+            resources[(index_sell * 5) - 1] = str(float(resources[(index_sell * 5) - 1]) + sell_best[0] * amount) + "\n"
+            resources[(index_buy * 5) - 1] = str(float(resources[(index_buy * 5) - 1]) - buy_best[0] * amount) + "\n"
+            resources_file.seek(0)
+            resources_file.writelines(resources)
+        else:
+            print("NIE WYSTARCZAJĄCE ILOŚĆ ŚRODKÓW NA KONCIE")
+        resources_file.close()
+    else:
+        print("ARBITRAŻ NIE MOŻLIWY")
+        print("NAJELPSZE CENY TERAZ ZA",amount,"BTC")
+        print("ABY KUPIĆ",buy_best[0]*amount,"USD  NA",buy_best[1])
+        print("ABY SPRZEDAĆ",sell_best[0]*amount,"USD  NA",sell_best[1])
 
-print(buy_and_sell(data()))
+amount=0.1
+dane=data()
+arbitration(dane,amount)

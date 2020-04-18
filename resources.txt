@@ -1,0 +1,22 @@
+Zarobek USD: 
+0.4
+bitbay
+USD
+15000
+BTC
+9
+blockchain
+USD
+12900.0
+BTC
+9.299999999999999
+bitstamp
+USD
+15000
+BTC
+9
+cex
+USD
+17100.600000000002
+BTC
+9.1
