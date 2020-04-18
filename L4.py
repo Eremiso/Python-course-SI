@@ -27,13 +27,14 @@ def data():
 
     taker=[0.003,0.024,0.025,0.03]
     for i in range(len(taker)):
-        sell.append((sell[i]-(taker[i]*sell[i])))
+        sell[i]=(sell[i]-(taker[i]*sell[i]))
 
     return  buy,sell,name
 
+
 def buy_and_sell(data):
 
-    buy_best=max(zip(data[0],data[2]))
+    buy_best=min(zip(data[0],data[2]))
     sell_best=max(zip(data[1],data[2]))
 
     return buy_best,sell_best
