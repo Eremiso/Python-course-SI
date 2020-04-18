@@ -41,9 +41,9 @@ def arbitration(data,amount):
     if buy_best<sell_best:
         resources_file = open('C:/Users/Legion/Desktop/Python-course-SI/resources.txt', 'r+')
         resources = resources_file.readlines()
-        if float(resources[(index_sell * 5) + 1]) > amount and float(resources[(index_buy * 5) - 1]) > sell_best[
-            0] * amount:
-            income = (sell_best[0] - buy_best[0]) * amount
+        income = (sell_best[0] - buy_best[0]) * amount
+        print("NA GIEŁDZIE",buy_best[1],"MOŻNA KUPIĆ",amount,"ZA USD PO KURSIE",buy_best[0],"I SPRZEDAĆ NA GIEŁDZIE",sell_best[1],"PO KURSIE", sell_best[0],"ZYSKUJĄC",income,"USD")
+        if float(resources[(index_sell * 5) + 1]) > amount and float(resources[(index_buy * 5) - 1]) > sell_best[0] * amount:
             resources[1] = str(float(resources[1]) + income) + "\n"
             resources[(index_sell * 5) + 1] = str(float(resources[(index_buy * 5) + 1]) - amount) + "\n"
             resources[(index_buy * 5) + 1] = str(float(resources[(index_buy * 5) + 1]) + amount) + "\n"
