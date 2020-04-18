@@ -1,22 +1,22 @@
 Zarobek USD: 
-0.4
+0
 bitbay
 USD
-15000
+# wprowadz w tym miejscu swoje USD z bitbay
 BTC
-9
+# wprowadz w tym miejscu swoje BTC z bitbay
 blockchain
 USD
-12900.0
+# wprowadz w tym miejscu swoje USD z blockchaina
 BTC
-9.299999999999999
+# wprowadz w tym miejscu swoje BTC z blockchaina
 bitstamp
 USD
-15000
+# wprowadz w tym miejscu swoje USD z bitstampa
 BTC
-9
+# wprowadz w tym miejscu swoje BTC z bitstampa
 cex
 USD
-17100.600000000002
+# wprowadz w tym miejscu swoje USD z cexa
 BTC
-9.1
+# wprowadz w tym miejscu swoje BTC z cexa
