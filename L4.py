@@ -1,4 +1,5 @@
 import requests
+import time
 
 def data():
     data=[]
@@ -61,5 +62,8 @@ def arbitration(data,amount):
         print("ABY SPRZEDAĆ",sell_best[0]*amount,"USD  NA",sell_best[1])
 
 amount=0.1
-dane=data()
-arbitration(dane,amount)
+while True:
+    dane = data()
+    arbitration(dane, amount)
+    print('-'*40)
+    time.sleep(5)
