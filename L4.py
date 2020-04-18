@@ -11,7 +11,7 @@ def data():
     data.append(requests.get('https://www.bitstamp.net/api/ticker').json())
     data.append(requests.get('https://cex.io/api/ticker/BTC/USD').json())
 
-    name=["Bitbay","Blocchain","Bitstamp","Cex"]
+    name=["Bitbay","Blockchain","Bitstamp","Cex"]
 
     buy.append(data[0]['ask'])
     sell.append(data[0]['bid'])
